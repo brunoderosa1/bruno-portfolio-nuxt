@@ -63,7 +63,7 @@ console.log(works.value[0].images)
 
 <template>
   <div id="background">
-    <div class="flex gap-3 absolute right-10 uppercase p-5">
+    <!-- <div class="flex gap-3 absolute right-10 uppercase p-5">
       <router-link
         v-for="link in sections"
         class="no-underline hover:bg-green-200 hover:scale-105 hover:transition bg-purple-200 py-2 px-4 rounded text-slate-800 font-bold shadow"
@@ -71,10 +71,10 @@ console.log(works.value[0].images)
       >
         {{ link.text }}
       </router-link>
-    </div>
+    </div> -->
 
-    <section id="about" class="flex p-10 justify-center">
-      <div class="flex-col scale-150 mt-50 flex justify-center items-center">
+    <section id="about" class="flex p-30 justify-center">
+      <div class="flex-col scale-150  flex justify-center items-center">
         <h1 class="text-xl scale-200">Hi! I'm Bruno</h1>
         <!-- <h3 class="text-base scale-150 ">Web Developer</h3> -->
         <p class="text-center word-wrap px-10">
@@ -120,6 +120,9 @@ console.log(works.value[0].images)
           </div>
         </div>
       </div>
+    </section>
+    <section id="contact" class="flex items-center gap-1 justify-center">
+      <p class="text-center mt-15">You can contact me at</p><p class="text-center mt-15"><a class="no-underline color-purple-200 hover:color-purple-600 hover:bg-green-200 hover:scale-110 hover:transition" :href="'mailto:brunoderosa180@email.com'" >brunoderosa180@email.com</a>.</p>
     </section>
   </div>
 </template>
