@@ -9,6 +9,7 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
+    "@iconify-json/mdi": "^1.1.50",
     "@iconify-json/vscode-icons": "^1.1.22",
     "@nuxtjs/google-fonts": "^3.0.0",
     "@nuxtjs/i18n": "^8.0.0-beta.10",
@@ -16,5 +17,8 @@
     "@unocss/preset-icons": "^0.50.6",
     "nuxt": "^3.3.2",
     "prettier": "^2.8.7"
+  },
+  "dependencies": {
+    "@vuestic/nuxt": "^1.0.12"
   }
 }

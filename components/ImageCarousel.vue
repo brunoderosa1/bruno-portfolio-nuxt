@@ -1,81 +1,43 @@
-<template>
-  <div class="carousel">
-    <div
-      class="carousel-container"
-      :style="{ transform: `translateX(-${currentSlide * slideWidth}px)` }"
-    >
-      <div class="carousel-slide" v-for="(item, index) in items" :key="index">
-        <slot class="carousel-item" :item="item" :index="index">
-          <img :src="item" alt="" />
-        </slot>
-      </div>
-    </div>
-    <div class="carousel-controls">
-      <button @click="prev" :disabled="currentSlide === 0">Prev</button>
-      <button @click="next" :disabled="currentSlide === items.length - 1">
-        Next
-      </button>
-    </div>
-  </div>
-</template>
-
 <script setup>
-import { ref } from 'vue'
+  import { ref, toRefs } from 'vue';
 
-const props = defineProps({
-  items: {
-    type: Array,
-    required: true,
-  },
-  slideWidth: {
-    type: Number,
-    default: 300,
-  },
-})
+  const props = defineProps({
+    items: {
+      type: Array,
+      required: true
+    }
+  })
 
-const currentSlide = ref(0)
-
-const next = () => {
-  currentSlide.value = Math.min(currentSlide.value + 1, props.items.length - 1)
-}
-
-const prev = () => {
-  currentSlide.value = Math.max(currentSlide.value - 1, 0)
-}
-
-const slideWidth = ref(props.slideWidth)
+  const { items } = toRefs(props)
 </script>
 
-<style>
-.carousel {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
 
-.carousel-container {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-}
-
-.carousel-slide {
-  display: flex;
-}
-
-.carousel-item {
-  flex-shrink: 0;
-  width: 100%;
-}
-
-.carousel-controls {
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-button {
-  margin: 0 10px;
-}
-</style>
+<template>
+  <div id="default-carousel" class="relative w-full" data-carousel="slide">
+      <!-- Carousel wrapper -->
+      <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+           <!-- Item 1 -->
+          <div v-for="item in items" class="hidden duration-700 ease-in-out" data-carousel-item>
+              <img :src="item" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+          </div>
+          
+      </div>
+      <!-- Slider indicators -->
+      <div class="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2">
+          <button v-for="item, index in items" type="button" class="w-3 h-3 rounded-full" :data-carousel-slide-to="index"></button>
+      </div>
+      <!-- Slider controls -->
+      <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+          <span class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+              <svg aria-hidden="true" class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+              <span class="sr-only">Previous</span>
+          </span>
+      </button>
+      <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+          <span class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+              <svg aria-hidden="true" class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+              <span class="sr-only">Next</span>
+          </span>
+      </button>
+  </div>
+</template>
