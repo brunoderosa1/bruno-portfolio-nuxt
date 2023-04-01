@@ -1,7 +1,5 @@
 <script setup>
 import { defineNuxtConfig } from 'nuxt/config'
-import { ref } from 'vue'
-import CarouselComponent from './components/CarouselComponent.vue'
 
 const value = ref(0)
 
@@ -72,7 +70,11 @@ console.log(works.value[0].images)
         {{ link.text }}
       </router-link>
     </div> -->
-
+    <Head>
+      <Title>
+        Bruno De Rosa's Portfolio
+      </Title>
+    </Head>
     <section id="about" class="flex p-30 justify-center">
       <div class="flex-col scale-150  flex justify-center items-center">
         <h1 class="text-xl scale-200">Hi! I'm Bruno</h1>
