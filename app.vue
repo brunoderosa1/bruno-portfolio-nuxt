@@ -33,7 +33,7 @@ const works = ref([
   {
     title: 'Small business management app',
     description:
-      'App to manage appointments in a pet salon, I focused on delivering a great user experience with a straight forward design and hazzle free workflow.',
+      'App to manage appointments in a pet salon, I focused on delivering a great user experience with a straight forward design and hassle-free workflow.',
     stack: [
       {
         name: 'Vue 3',
