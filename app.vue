@@ -63,7 +63,10 @@ useHead({
 
 <template>
   <Body>
-    <div id="background">
+    <div
+      id="background"
+      class="min-h-100vh"
+    >
       <!-- <div class="flex gap-3 absolute right-10 uppercase p-5">
         <router-link
           v-for="link in sections"
@@ -74,66 +77,42 @@ useHead({
         </router-link>
       </div> -->
 
-      <section id="about" class="flex p-30 pb-10 justify-center">
+      <section
+        id="about"
+        class="flex p-30 pb-10 justify-center"
+      >
         <div class="flex-col scale-150 flex justify-center items-center">
           <h1 class="text-xl scale-200">Hey there!</h1>
           <!-- <h3 class="text-base scale-150 ">Web Developer</h3> -->
           <p class="md:text-left sm:text-center word-wrap lg:w-3/5">
             I'm Bruno, a web developer based in Argentina. I love building apps that
-            solve people's problems. Checkout what I've been up to next.
+            solve people's problems. Checkout what I've been up to.
           </p>
           <div class="justify-center flex gap-5">
-            <a href="https://www.linkedin.com/in/bruno-de-rosa-943a83246/"
-              ><div
+            <a href="https://www.linkedin.com/in/bruno-de-rosa-943a83246/">
+              <div
                 class="i-mdi:linkedin scale-200 bg-indigo-500 hover:bg-green-700 hover:scale-210 hover:transition shadow mix-blend-difference"
-              ></div
-            ></a>
-            <a href="https://github.com/brunoderosa1"
-              ><div
-                class="i-mdi:github scale-200 bg-indigo-500 hover:bg-green-700 hover:scale-210 hover:transition shadow"
-              ></div
-            ></a>
+              ></div>
+            </a>
+            <a href="https://github.com/brunoderosa1">
+              <div
+                class="i-mdi:github scale-200 bg-indigo-500 hover:bg-green-700 hover:scale-210 hover:transition shadow">
+              </div>
+            </a>
           </div>
           <!-- <p class="font-bold">Checkout my latest work!</p> -->
         </div>
       </section>
-      <!-- <section class="mt-10" id="work">
-        <div
-          v-for="(work, index) in works"
-          :key="index"
-          class="flex flex-col items-center"
-        >
-          <va-carousel
-            class="lg:w-1/4 w-5/6"
-            stateful
-            :items="work.images"
-            indicators
-            infinite
-            swipable
-            :fit="'contain'"
-            :ratio="1"
-          />
-          <div class="flex flex-col items-center p-5 w-100">
-            <h1 class="text-center">{{ work.title }}</h1>
-            <p class="w-100 text-center">{{ work.description }}</p>
-            <div class="flex flex-row mt-5 gap-5">
-              <div
-                v-for="item in work.stack"
-                :class="`${item.icon} scale-200`"
-                :title="item.name"
-              ></div>
-            </div>
-          </div>
-        </div>
-      </section> -->
-      <section id="contact" class="flex items-center gap-1 justify-center">
+      <section
+        id="contact"
+        class="flex items-center gap-1 justify-center"
+      >
         <p class="text-center mt-15">You can contact me at</p>
         <p class="text-center mt-15">
           <a
-            class="no-underline color-purple-200 hover:color-purple-600 hover:bg-green-200 hover:scale-110 hover:transition"
+            class="no-underline color-green-700 hover:color-purple-600 hover:bg-green-600 hover:scale-110 hover:transition font-semibold"
             :href="'mailto:brunoderosa180@email.com'"
-            >brunoderosa180@gmail.com</a
-          >.
+          >brunoderosa180@gmail.com</a>.
         </p>
       </section>
     </div>
@@ -155,62 +134,73 @@ link[rel="icon"] {
 }
 
 body {
-    margin: 0px;
-    background: linear-gradient(65deg, #eaf7d6, #fee3ff, #f5ffc6);
-    background-size: 200% 200%;
+  margin: 0px;
+  background: linear-gradient(65deg, #eaf7d6, #fee3ff, #f5ffc6);
+  background-size: 200% 200%;
 
-    font-family: Inter !important;
+  font-family: Inter !important;
 
-    -webkit-animation: AnimationName 10s ease infinite;
-    -moz-animation: AnimationName 10s ease infinite;
-    -o-animation: AnimationName 10s ease infinite;
-    animation: AnimationName 10s ease infinite;
+  -webkit-animation: AnimationName 10s ease infinite;
+  -moz-animation: AnimationName 10s ease infinite;
+  -o-animation: AnimationName 10s ease infinite;
+  animation: AnimationName 10s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+  0% {
+    background-position: 0% 49%;
   }
 
-  @-webkit-keyframes AnimationName {
-    0% {
-      background-position: 0% 49%;
-    }
-    50% {
-      background-position: 100% 52%;
-    }
-    100% {
-      background-position: 0% 49%;
-    }
+  50% {
+    background-position: 100% 52%;
   }
-  @-moz-keyframes AnimationName {
-    0% {
-      background-position: 0% 49%;
-    }
-    50% {
-      background-position: 100% 52%;
-    }
-    100% {
-      background-position: 0% 49%;
-    }
+
+  100% {
+    background-position: 0% 49%;
   }
-  @-o-keyframes AnimationName {
-    0% {
-      background-position: 0% 49%;
-    }
-    50% {
-      background-position: 100% 52%;
-    }
-    100% {
-      background-position: 0% 49%;
-    }
+}
+
+@-moz-keyframes AnimationName {
+  0% {
+    background-position: 0% 49%;
   }
-  @keyframes AnimationName {
-    0% {
-      background-position: 0% 49%;
-    }
-    50% {
-      background-position: 100% 52%;
-    }
-    100% {
-      background-position: 0% 49%;
-    }
+
+  50% {
+    background-position: 100% 52%;
   }
+
+  100% {
+    background-position: 0% 49%;
+  }
+}
+
+@-o-keyframes AnimationName {
+  0% {
+    background-position: 0% 49%;
+  }
+
+  50% {
+    background-position: 100% 52%;
+  }
+
+  100% {
+    background-position: 0% 49%;
+  }
+}
+
+@keyframes AnimationName {
+  0% {
+    background-position: 0% 49%;
+  }
+
+  50% {
+    background-position: 100% 52%;
+  }
+
+  100% {
+    background-position: 0% 49%;
+  }
+}
 </style>
 
 <style scoped>
