@@ -24,4 +24,9 @@ export default defineNuxtConfig({
       Inter: [400, 600],
     },
   },
+  head: {
+    link: [
+      { rel: 'icon', href: '' },
+    ],
+  },
 })
