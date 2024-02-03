@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ['@unocss/nuxt', '@nuxtjs/google-fonts', '@vuestic/nuxt'],
+  modules: ['@unocss/nuxt', '@nuxtjs/google-fonts', '@vuestic/nuxt', 'nuxt-gtag'],
   unocss: {
     // presets
     uno: true, // enabled `@unocss/preset-uno`
@@ -29,4 +29,7 @@ export default defineNuxtConfig({
       { rel: 'icon', href: '' },
     ],
   },
+  gtag: {
+    id: 'G-7N8SSDDB58'
+  }
 })

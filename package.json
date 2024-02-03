@@ -16,6 +16,7 @@
     "@unocss/nuxt": "^0.50.6",
     "@unocss/preset-icons": "^0.50.6",
     "nuxt": "^3.10.0",
+    "nuxt-gtag": "^1.1.2",
     "prettier": "^2.8.7"
   },
   "dependencies": {
