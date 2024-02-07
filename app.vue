@@ -110,7 +110,7 @@ useSeoMeta({
       </section>
       <section
         id="contact"
-        class="flex items-center gap-1 justify-center"
+        class="flex items-center gap-1 justify-center -bottom-1"
       >
         <p class="text-center mt-15">You can contact me at</p>
         <p class="text-center mt-15">
@@ -125,9 +125,6 @@ useSeoMeta({
 </template>
 
 <style>
-:root {
-  --va-carousel-background: rgb(88, 86, 86);
-}
 
 * {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
@@ -205,11 +202,5 @@ body {
   100% {
     background-position: 0% 49%;
   }
-}
-</style>
-
-<style scoped>
-#fuzzy {
-  z-index: -2;
 }
 </style>
