@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ['@unocss/nuxt', '@nuxtjs/google-fonts', '@vuestic/nuxt', 'nuxt-gtag'],
+  modules: ['@unocss/nuxt', '@nuxtjs/google-fonts', '@vuestic/nuxt', 'nuxt-gtag', '@nuxtjs/seo'],
   unocss: {
     // presets
     uno: true, // enabled `@unocss/preset-uno`

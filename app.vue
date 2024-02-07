@@ -59,6 +59,11 @@ useHead({
   title: 'Bruno De Rosa',
 })
 
+useSeoMeta({
+  title: 'Bruno De Rosa',
+  description: "Bruno De Rosa's portfolio"
+})
+
 </script>
 
 <template>
@@ -89,12 +94,12 @@ useHead({
             solve people's problems. Checkout what I've been up to.
           </p>
           <div class="justify-center flex gap-5">
-            <a href="https://www.linkedin.com/in/bruno-de-rosa-943a83246/">
+            <a alt="linkedin" href="https://www.linkedin.com/in/bruno-de-rosa-943a83246/" aria-label="Link to my LinkedIn" >
               <div
                 class="i-mdi:linkedin scale-200 bg-indigo-500 hover:bg-green-700 hover:scale-210 hover:transition shadow mix-blend-difference"
               ></div>
             </a>
-            <a href="https://github.com/brunoderosa1">
+            <a alt="github" href="https://github.com/brunoderosa1" aria-label="Link to my GitHub" >
               <div
                 class="i-mdi:github scale-200 bg-indigo-500 hover:bg-green-700 hover:scale-210 hover:transition shadow">
               </div>
